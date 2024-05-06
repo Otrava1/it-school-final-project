@@ -43,7 +43,7 @@ export function GameDetails() {
             boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
             transition: {duration: 0.2}
         },
-		whileTap: { scale: 4, y:-200}
+		whileTap: { scale: 6, y:-400}
     };
 
     return (
@@ -75,10 +75,11 @@ export function GameDetails() {
                 ))}
             </ul>
 
-            <h2 className='details-subtitle'>Screenshots(click to enlarge):</h2>
+            <h2 className='details-subtitle'>Screenshots:</h2>
             <div className='details-screenshots' style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                 {screenshots.map((screenshot, index) => (
-                    <motion.div initial={cardStyle.initial}
+                    <motion.div className='animated-container-screenshots'
+                    initial={cardStyle.initial}
                     animate={cardStyle.animate}
                     whileHover={cardStyle.whileHover}
                     whileTap={cardStyle.whileTap}>
