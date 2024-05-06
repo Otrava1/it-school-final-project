@@ -1,0 +1,64 @@
+.details-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.details-title-card{
+    display: flex;
+    position: relative;
+    text-align: center;
+    color: whitesmoke;
+
+}
+.details-title {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size: 120px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 3px 3px 3px black
+}
+
+@media screen and (max-width:1400px) {
+    .details-title {
+        font-size: 50px;
+    }
+}
+
+.details-description {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2) ;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.details-platform-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: x-large;
+    font-family: "Bebas Neue", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.details-img {
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+}

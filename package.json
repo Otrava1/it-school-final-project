@@ -1,0 +1,35 @@
+{
+  "name": "stackblitz-starters-jec6pz",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "framer-motion": "^11.1.7",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.21.2",
+    "react-toastify": "^10.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-scripts": "latest"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

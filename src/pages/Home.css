@@ -1,0 +1,73 @@
+.home-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.home-cards {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border: 2px solid white;
+    height: 450px;
+    width:320px;
+    font-family: "Bebas Neue", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+    font-size: xx-large;
+    color: whitesmoke;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 3px 3px 3px black
+}
+.home-link {
+    text-decoration: none;
+}
+
+.home-cards.left {
+    background-image:url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWg0aGk3MGFycDZtZ3VocjVzbWxyaWJpeHllbmluZm9td2psc3hvcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BQso6EW8N8CpDCpTe8/giphy.gif');
+}
+.home-cards.right {
+    background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanUxMjdlbnI1cnB0YW1udXE1a2l6eXhnNjUxMHR5bnJvNDU3NWVrYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yruvnlhiqKbKdQD8Y5/giphy.gif');
+}
+
+@media only screen and (max-width: 800px) {
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .home-title, .home-subtitle {
+        text-wrap: balance;
+        margin-bottom: 40px;
+    }
+    .home-cards {
+    height: 225px;
+    width:160px;
+    margin-bottom: 30px;
+
+    }
+}
+
+.home-title {
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+    font-size: 60px;
+    color: whitesmoke;
+}
+.home-subtitle {
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+    color: whitesmoke;
+    font-size: 15px;
+}

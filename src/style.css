@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: rgb(0,0,0);
+	background: linear-gradient(162deg, rgba(0,0,0,1) 0%, rgba(28,28,28,1) 48%, rgba(88,88,88,1) 100%);
+}
+
+h1 {
+	font-family: "Bebas Neue", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: white;
+	font-size: 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+header,
+footer {
+	background-color: none;
+	display: flex;
+  	padding: 10px;
+  	font-family: "Bebas Neue", sans-serif;
+	font-weight: 400;
+	font-size: x-large;
+	font-style: normal;
+	color: whitesmoke;
+}
+
+header a,
+footer a{
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+	justify-content: space-evenly;
+}
+
+footer {
+	justify-content: center;
+}
+/* Header Button Customization */
+.navbutton {
+    position: relative;
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  
+  .navbutton:hover {
+    color: whitesmoke;
+  }
+  
+  .navbutton::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: whitesmoke;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .navbutton:hover::before {
+    transform: scaleX(1);
+  }
+
+  .collection-empty {
+	display: flex;
+	height: 100vh;
+	width: auto;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: whitesmoke;
+	font-family: "Bebas Neue", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: white;
+	font-size: 1.5rem;
+  }
+
+  
