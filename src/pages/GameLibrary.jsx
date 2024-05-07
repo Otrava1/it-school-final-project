@@ -1,32 +1,3 @@
-// import React, { useEffect, useState } from 'react';
-// import { Layout } from '../components/Layout';
-// import { getGamesEndpoint } from '../api/endpoint';
-// import { Container } from 'react-bootstrap';
-// import { GameCardList } from '../components/GameCardList';
-// import { useFetch } from '../utils/hooks/useFetch';
-// // import { GameCardList } from '../components/GameCardList'
-
-// export function About() {
-//   const gamesEndpoint = getGamesEndpoint();
-
-//   const gamesData = useFetch(gamesEndpoint);
-//   console.log(gamesData);
-
-
-//   return (
-//     <>
-//       {/* Instanțiem Layout, dandu-i copii.*/}
-//       <Layout>
-//         <h1 className="color">Games</h1>
-//             <Container>
-//                 {/* Afisez stirile despre tehnologie */}
-//                 {/* <GameCardList gameList = {gamesData} /> */}
-//             </Container>
-//       </Layout>
-//     </>
-//   );
-// }
-
 import React, { useState, useEffect } from 'react';
 import { useFetch } from '../utils/hooks/useFetch';
 import { Layout } from '../components/Layout';
