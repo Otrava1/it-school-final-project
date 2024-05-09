@@ -30,7 +30,7 @@ export function CollectionProvider({ children }) {
     };
 
     const removeItemFromCollection = (item) => {
-        setCollection((prevCollection) => prevCollection.filter((i) => collectionElem.id !== item.id));
+        setCollection((prevCollection) => prevCollection.filter((collectionElem) => collectionElem.id !== item.id));
         toast.warning(`"${item.title}" has been removed from your collection.`);
     };
 
