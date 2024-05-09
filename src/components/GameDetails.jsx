@@ -1,37 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Container } from 'react-bootstrap';
 import './GameDetails.css';
 import { motion } from 'framer-motion'
-
-
-
+import { useFetch } from '../utils/hooks/useFetch';
 
 export function GameDetails() {
     const { gameId } = useParams();
-
-    const [gameDetails, setGameDetails] = useState({});
-    const [screenshots, setScreenshots] = useState([]);
-    
-
-    useEffect(() => {
-        const fetchGameData = async () => {
-            try {
-                const gameDetailsResponse = await fetch(`https://api.rawg.io/api/games/${gameId}?key=0f12a281470b42668b45e0a6e06eafa1`);
-                const gameDetailsData = await gameDetailsResponse.json();
-                setGameDetails(gameDetailsData);
-
-                const screenshotsResponse = await fetch(`https://api.rawg.io/api/games/${gameId}/screenshots?key=0f12a281470b42668b45e0a6e06eafa1`);
-                const screenshotsData = await screenshotsResponse.json();
-                setScreenshots(screenshotsData.results);
-            } catch (error) {
-                console.error('Error fetching game data:', error);
-            }
-        };
-
-        fetchGameData();
-    }, [gameId]);
+    const {dataGames: gameDetails, loadingState, errorState} = useFetch(`https://api.rawg.io/api/games/${gameId}?key=0f12a281470b42668b45e0a6e06eafa1`, true);
+    const {dataGames: screenshots} = useFetch(`https://api.rawg.io/api/games/${gameId}/screenshots?key=0f12a281470b42668b45e0a6e06eafa1`, true);
+   
 
     const cardStyle = {
         initial: { rotate: 0, scale: 1 },
@@ -45,6 +24,18 @@ export function GameDetails() {
         },
 		whileTap: { scale: 6, y:-400}
     };
+
+    if (loadingState) {
+		return (
+			<div className="loader">
+				<div className="animated-loader"></div>
+			</div>
+		);
+	}
+
+	if (errorState) {
+		return <div className="error-message">Error in communicating with API</div>;
+	}
 
     return (
         <Layout>
@@ -77,7 +68,7 @@ export function GameDetails() {
 
             <h2 className='details-subtitle'>Screenshots:</h2>
             <div className='details-screenshots' style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                {screenshots.map((screenshot, index) => (
+                {screenshots.results.map((screenshot, index) => (
                     <motion.div className='animated-container-screenshots'
                     initial={cardStyle.initial}
                     animate={cardStyle.animate}

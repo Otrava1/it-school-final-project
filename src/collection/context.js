@@ -20,7 +20,7 @@ export function CollectionProvider({ children }) {
     }, [collection]);
 
     const addItemToCollection = (item) => {
-        const itemExists = collection.some((i) => i.id === item.id);
+        const itemExists = collection.some((collectionElem) => collectionElem.id === item.id);
         if (!itemExists) {
             setCollection((prevCollection) => [...prevCollection, item]);
             toast.success(`"${item.title}" has been added to your collection.`);
@@ -30,7 +30,7 @@ export function CollectionProvider({ children }) {
     };
 
     const removeItemFromCollection = (item) => {
-        setCollection((prevCollection) => prevCollection.filter((i) => i.id !== item.id));
+        setCollection((prevCollection) => prevCollection.filter((i) => collectionElem.id !== item.id));
         toast.warning(`"${item.title}" has been removed from your collection.`);
     };
 
